@@ -12,7 +12,7 @@ public class LaunchBrowser {
         // Initialize the Chrome WebDriver
         WebDriver driver = new ChromeDriver();
 
-        // Open a website
+        // Open a web site
         driver.get("https://www.google.com");
 
         // Print the title of the page
