@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LaunchBrowser {
 
     public static void main(String[] args) {
-        // Set the path to the ChromeDriver executable
+        // Set the path to the ChromeDriver executable 1
         System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 
         // Initialize the Chrome WebDriver
