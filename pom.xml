@@ -11,7 +11,7 @@
             <version>4.14.0</version> <!-- Replace with the latest version if available -->
         </dependency>
 
-       <!-- J Java Dependency -->
+       <!-- Junit Java Dependency -->
        
           <dependency>
             <groupId>org.junit.jupiter</groupId>
