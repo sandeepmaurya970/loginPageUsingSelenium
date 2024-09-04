@@ -17,7 +17,7 @@ public class LaunchBrowser {
     public static void main(String[] args) throws Exception {    
         WebDriver driver = new ChromeDriver();    
         try {
-         
+           System.out.println("tEST DAT");
            driver.get("http://68.178.169.152:4091/APL/Login.aspx");
            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                         wait.until(ExpectedConditions.titleIs("Credpro"));
