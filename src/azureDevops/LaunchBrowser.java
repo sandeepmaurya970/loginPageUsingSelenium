@@ -3,22 +3,33 @@ package azureDevops;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 public class LaunchBrowser {
 
-    public static void main(String[] args) {
-        // Set the path to the ChromeDriver executable 1
-        System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver_win32\\chromedriver.exe");
+    public static void main(String[] args) throws Exception {    
+        WebDriver driver = new ChromeDriver();    
+        try {
+         
+            driver.get("http://68.178.169.152:4091/APL/Login.aspx");
+           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                        WebElement loginButton = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.id("btnLogin")));
 
-        // Initialize the Chrome WebDriver
-        WebDriver driver = new ChromeDriver();
+                        wait.until(ExpectedConditions.titleIs("Credpro"));
 
-        // Open a web site
-        driver.get("https://www.google.com");
-
-        // Print the title of the page
-        System.out.println("Page title is: " + driver.getTitle());
-
-        // Close the browser
-        driver.quit();
+            // Print the page title after it has fully loaded
+            System.out.println("Page title is: " + driver.getTitle());
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Close the browser
+            driver.quit();
+        }
     }
-}
+   }
