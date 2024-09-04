@@ -65,7 +65,7 @@ public class LoginPageTest {
         WebElement loginButton = driver.findElement(By.id("btnLogin"));
 
         usernameField.sendKeys("sandeep");
-        passwordField.sendKeys("123421");
+        passwordField.sendKeys("1234211");
         loginButton.click();
 
         // Verify that an error message is displayed
