@@ -1,82 +1,59 @@
 package azureDevops;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import static org.junit.Assert.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPageTest {
-    
-    private WebDriver driver;
-    private String baseUrl = "http://68.178.169.152:4091/APL/Login.aspx";
+public class LoginPageTest extends BaseTest {
 
-    @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(baseUrl);
-    }
+    // Common locators for the login page
+    private By usernameField = By.id("txtUserName");
+    private By passwordField = By.id("txtPassword");
+    private By loginButton = By.id("btnLogin");
+    private By errorMessageLocator = By.id("lbError");
 
-    @Test
+    @Test(priority = 1)
     public void testLoginPageLoad() {
         // Verify that the login page has loaded by checking the title
         String expectedTitle = "Credpro";
+        wait.until(ExpectedConditions.titleIs(expectedTitle));
         String actualTitle = driver.getTitle();
-        assertEquals(expectedTitle, actualTitle);
+        Assert.assertEquals(actualTitle, expectedTitle, "Page title did not match!");
     }
 
-    @Test
+    @Test(priority = 2)
     public void testLoginPageElementsPresence() {
         // Verify that the username and password fields are present
-        WebElement usernameField = driver.findElement(By.id("txtUserName"));
-        WebElement passwordField = driver.findElement(By.id("txtPassword"));
-        WebElement loginButton = driver.findElement(By.id("btnLogin"));
-
-        assertTrue(usernameField.isDisplayed());
-        assertTrue(passwordField.isDisplayed());
-        assertTrue(loginButton.isDisplayed());
+        Assert.assertTrue(driver.findElement(usernameField).isDisplayed(), "Username field not visible!");
+        Assert.assertTrue(driver.findElement(passwordField).isDisplayed(), "Password field not visible!");
+        Assert.assertTrue(driver.findElement(loginButton).isDisplayed(), "Login button not visible!");
     }
 
-    @Test
+    @Test(priority = 3)
     public void testSuccessfulLogin() {
         // Enter valid credentials and submit the form
-        WebElement usernameField = driver.findElement(By.id("txtUserName"));
-        WebElement passwordField = driver.findElement(By.id("txtPassword"));
-        WebElement loginButton = driver.findElement(By.id("btnLogin"));
+        driver.findElement(usernameField).sendKeys("heramb.khandekar@bank.com");
+        driver.findElement(passwordField).sendKeys("DemoPwd@21");
+        driver.findElement(loginButton).click();
 
-        usernameField.sendKeys("heramb.khandekar@bank.com");
-        passwordField.sendKeys("DemoPwd@21");
-        loginButton.click();
-        // Verify that the user is redirected to the home page after login
+        // Verify successful login
         String expectedUrl = "http://68.178.169.152:4091/APL/MyTasks.aspx";
-        String actualUrl = driver.getCurrentUrl();
-        assertEquals(expectedUrl, actualUrl);
+        wait.until(ExpectedConditions.urlToBe(expectedUrl));
+        Assert.assertEquals(driver.getCurrentUrl(), expectedUrl, "URL after login did not match!");
     }
 
-    @Test
+    @Test(priority = 4)
     public void testInvalidLogin() {
         // Enter invalid credentials and submit the form
-        WebElement usernameField = driver.findElement(By.id("txtUserName"));
-        WebElement passwordField = driver.findElement(By.id("txtPassword"));
-        WebElement loginButton = driver.findElement(By.id("btnLogin"));
+        driver.findElement(usernameField).sendKeys("invalid_user");
+        driver.findElement(passwordField).sendKeys("invalid_password");
+        driver.findElement(loginButton).click();
 
-        usernameField.sendKeys("sandeep");
-        passwordField.sendKeys("1234211");
-        loginButton.click();
-
-        // Verify that an error message is displayed
-        WebElement errorMessage = driver.findElement(By.id("lbError"));
-        assertTrue(errorMessage.isDisplayed());
-        assertEquals("Invalid username or password", errorMessage.getText());
-    }
-
-    @After
-    public void tearDown() {
-        // Close the browser
-        driver.quit();
+        // Verify error message
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageLocator));
+        Assert.assertTrue(errorMessage.isDisplayed(), "Error message not displayed!");
+        Assert.assertEquals(errorMessage.getText(), "Invalid username or password", "Incorrect error message!");
     }
 }

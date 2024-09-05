@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-05T16:38:05 IST" name="Default suite" finished-at="2024-09-05T16:38:22 IST" duration-ms="16917">
+    <groups>
+    </groups>
+    <test started-at="2024-09-05T16:38:05 IST" name="Default test" finished-at="2024-09-05T16:38:22 IST" duration-ms="16917">
+      <class name="azureDevops.LoginPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:05 IST" name="setUp" finished-at="2024-09-05T16:38:09 IST" duration-ms="4229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginPageLoad()[pri:1, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:09 IST" name="testLoginPageLoad" finished-at="2024-09-05T16:38:09 IST" duration-ms="27" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPageLoad -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:09 IST" name="tearDown" finished-at="2024-09-05T16:38:09 IST" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:09 IST" name="setUp" finished-at="2024-09-05T16:38:13 IST" duration-ms="3449" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginPageElementsPresence()[pri:2, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:13 IST" name="testLoginPageElementsPresence" finished-at="2024-09-05T16:38:13 IST" duration-ms="99" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginPageElementsPresence -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:13 IST" name="tearDown" finished-at="2024-09-05T16:38:13 IST" duration-ms="187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:13 IST" name="setUp" finished-at="2024-09-05T16:38:16 IST" duration-ms="3417" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSuccessfulLogin()[pri:3, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:16 IST" name="testSuccessfulLogin" finished-at="2024-09-05T16:38:17 IST" duration-ms="555" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Remote browser did not respond to getCurrentUrl
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Remote browser did not respond to getCurrentUrl
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.RemoteWebDriver.getCurrentUrl(RemoteWebDriver.java:318)
+at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:101)
+at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:96)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at azureDevops.LoginPageTest.testSuccessfulLogin(LoginPageTest.java:43)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccessfulLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:17 IST" name="tearDown" finished-at="2024-09-05T16:38:17 IST" duration-ms="189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:17 IST" name="setUp" finished-at="2024-09-05T16:38:20 IST" duration-ms="3397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testInvalidLogin()[pri:4, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:20 IST" name="testInvalidLogin" finished-at="2024-09-05T16:38:21 IST" duration-ms="923" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:azureDevops.LoginPageTest@3e8c3cb]" started-at="2024-09-05T16:38:21 IST" name="tearDown" finished-at="2024-09-05T16:38:22 IST" duration-ms="191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- azureDevops.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

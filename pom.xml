@@ -4,37 +4,27 @@
   <artifactId>Project1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
    <dependencies>
-        <!-- Selenium Java Dependency -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.14.0</version> <!-- Replace with the latest version if available -->
-        </dependency>
+    <!-- TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.10.2</version>
+        <scope>test</scope>
+    </dependency>
 
-       <!-- Junit Java Dependency -->
-       
-          <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.11.0</version>
-            <scope>test</scope>
-        </dependency>
-             
-        
-       <dependency>
-  			 <groupId>org.seleniumhq.selenium</groupId>
-    		<artifactId>selenium-java</artifactId>
-    		<version>4.14.0</version>
-      </dependency>
-        
-        
+    <!-- Selenium -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.14.0</version>
+    </dependency>
+      
         <dependency>
    			 <groupId>io.github.bonigarcia</groupId>
    			 <artifactId>webdrivermanager</artifactId>
    			 <version>5.5.1</version>
 		</dependency>
-
-       
+     
         </dependencies>
         
   <build>
