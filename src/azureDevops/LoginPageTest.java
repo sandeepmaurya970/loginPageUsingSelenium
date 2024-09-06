@@ -42,7 +42,7 @@ public class LoginPageTest extends BaseTest {
             wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
             System.out.println("Alert text: " + alert.getText());
-            alert.accept(); // Accept the alert (you can also use alert.dismiss() to cancel it)
+            alert.accept(); //Accept the alert (you can also use alert.dismiss() to cancel it)
         } catch (Exception e) {
             System.out.println("No alert present");
         }
@@ -55,12 +55,12 @@ public class LoginPageTest extends BaseTest {
 
     @Test(priority = 4)
     public void testInvalidLogin() {
-        // Enter invalid credentials and submit the form
+        //Enter invalid credentials and submit the form
         driver.findElement(usernameField).sendKeys("Sandeep");
         driver.findElement(passwordField).sendKeys("Test@1234");
         driver.findElement(loginButton).click();
 
-        // Verify error message
+        //Verify error message
         WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageLocator));
         Assert.assertTrue(errorMessage.isDisplayed(), "Error message not displayed!");
         Assert.assertEquals(errorMessage.getText(), "Invalid username or password", "Incorrect error message!");
