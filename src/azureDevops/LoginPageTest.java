@@ -1,5 +1,6 @@
 package azureDevops;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -37,6 +38,14 @@ public class LoginPageTest extends BaseTest {
         driver.findElement(usernameField).sendKeys("heramb.khandekar@bank.com");
         driver.findElement(passwordField).sendKeys("DemoPwd@21");
         driver.findElement(loginButton).click();
+        try {
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            System.out.println("Alert text: " + alert.getText());
+            alert.accept(); // Accept the alert (you can also use alert.dismiss() to cancel it)
+        } catch (Exception e) {
+            System.out.println("No alert present");
+        }
 
         // Verify successful login
         String expectedUrl = "http://68.178.169.152:4091/APL/MyTasks.aspx";
@@ -47,8 +56,8 @@ public class LoginPageTest extends BaseTest {
     @Test(priority = 4)
     public void testInvalidLogin() {
         // Enter invalid credentials and submit the form
-        driver.findElement(usernameField).sendKeys("invalid_user");
-        driver.findElement(passwordField).sendKeys("invalid_password");
+        driver.findElement(usernameField).sendKeys("Sandeep");
+        driver.findElement(passwordField).sendKeys("Test@1234");
         driver.findElement(loginButton).click();
 
         // Verify error message
